@@ -1,0 +1,561 @@
+[
+    {
+        "id": "e96e1bbae248f49e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0f4cb1e7d7cd516e",
+        "type": "serial-port",
+        "serialport": "COM4",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "cc4123241ed2dabe",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "71e49f3d615ac3e5",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "359cadfa7ca42ed5",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "71e49f3d615ac3e5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f0c2b64cced99862",
+        "type": "ui_group",
+        "name": "Umidade",
+        "tab": "71e49f3d615ac3e5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "79b5a07cdd5fd04e",
+        "type": "ui_group",
+        "name": "RFID",
+        "tab": "71e49f3d615ac3e5",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7250a45836c04268",
+        "type": "serial in",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "serial": "0f4cb1e7d7cd516e",
+        "x": 190,
+        "y": 340,
+        "wires": [
+            [
+                "41a8415117d8c4bc"
+            ]
+        ]
+    },
+    {
+        "id": "41a8415117d8c4bc",
+        "type": "json",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "61d546235eaf4e58",
+                "d4c932c9f7422115",
+                "8288c7bdcf424989",
+                "19d3a6f94704ca37",
+                "2aea26a46c024060"
+            ]
+        ]
+    },
+    {
+        "id": "61d546235eaf4e58",
+        "type": "change",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 280,
+        "wires": [
+            [
+                "88bcee86cbe14087",
+                "66bf3363465dd97a"
+            ]
+        ]
+    },
+    {
+        "id": "d4c932c9f7422115",
+        "type": "change",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.umidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 400,
+        "wires": [
+            [
+                "99ddd1528bd13e10",
+                "ef722c9497161e29"
+            ]
+        ]
+    },
+    {
+        "id": "88bcee86cbe14087",
+        "type": "ui_gauge",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "group": "359cadfa7ca42ed5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "C°",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "19",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 790,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "99ddd1528bd13e10",
+        "type": "ui_gauge",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "group": "f0c2b64cced99862",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidade",
+        "label": "Umidade",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "19",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "66bf3363465dd97a",
+        "type": "ui_chart",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "group": "359cadfa7ca42ed5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef722c9497161e29",
+        "type": "ui_chart",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "group": "f0c2b64cced99862",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Umidade",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 780,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c764877f6a8c11b0",
+        "type": "serial out",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "serial": "0f4cb1e7d7cd516e",
+        "x": 1030,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8288c7bdcf424989",
+        "type": "function",
+        "z": "e96e1bbae248f49e",
+        "name": "function 1",
+        "func": "var umidade = msg.payload.umidade;\n\n// Defina o limite de umidade\nvar limiteUmidade = 40;\n\n// Verifique se a umidade está abaixo do limite\nif (umidade < limiteUmidade) {\n    // Umidade abaixo do limite, crie uma mensagem de alerta\n    //msg.payload.alerta = \"Alerta: Umidade dentro dos limites\";\n    msg.payload = {\n        \"led\": 0,\n    }\n} else {\n    // Umidade dentro dos limites\n    //msg.payload.alerta = \"Umidade maior que 40%.\";\n    msg.payload = {\n        \"led\": 255,\n    }\n}\n\n// Continue para o próximo nó de saída\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 180,
+        "wires": [
+            [
+                "c764877f6a8c11b0"
+            ]
+        ]
+    },
+    {
+        "id": "19d3a6f94704ca37",
+        "type": "function",
+        "z": "e96e1bbae248f49e",
+        "name": "function 2",
+        "func": "// Extrair valores de temperatura e umidade do payload recebido\nvar temperatura = msg.payload.temperatura;\nvar umidade = msg.payload.umidade;\n\n// Criar objeto com os dados formatados\nvar dadosFormatados = {\n    temperatura: temperatura,\n    umidade: umidade,\n    timestamp: new Date() // Adicionar um carimbo de data/hora\n};\n\n// Armazenar os dados formatados no objeto de mensagem\nmsg.payload = dadosFormatados;\n\n// Continue para o próximo nó de saída\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 540,
+        "wires": [
+            [
+                "30a2629fd2bae242"
+            ]
+        ]
+    },
+    {
+        "id": "5602fb428b135014",
+        "type": "debug",
+        "z": "e96e1bbae248f49e",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "30a2629fd2bae242",
+        "type": "file",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "filename": "C:\\Users\\gustavorodrigues\\Desktop\\dados.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 860,
+        "y": 540,
+        "wires": [
+            [
+                "5602fb428b135014"
+            ]
+        ]
+    },
+    {
+        "id": "2aea26a46c024060",
+        "type": "change",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.rfid",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 680,
+        "wires": [
+            [
+                "d58e5e8ed3b87126",
+                "653812151624363d"
+            ]
+        ]
+    },
+    {
+        "id": "d58e5e8ed3b87126",
+        "type": "ui_gauge",
+        "z": "e96e1bbae248f49e",
+        "name": "",
+        "group": "79b5a07cdd5fd04e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "RFID",
+        "label": "OK",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 810,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "653812151624363d",
+        "type": "ui_text",
+        "z": "e96e1bbae248f49e",
+        "group": "359cadfa7ca42ed5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "RFID",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 790,
+        "y": 760,
+        "wires": []
+    }
+]
